@@ -200,8 +200,8 @@ jobs:
                       if 'internalportcfg' in body: internalportcfg = body['internalportcfg'].strip()
                       if 'esataportcfg' in body: esataportcfg = body['esataportcfg'].strip()
                       if 'usbportcfg' in body: usbportcfg = body['usbportcfg'].strip()
-                      #if 'sn' in body: sn = body['sn'].strip()
-                      #if 'mac' in body: mac = body['mac'].strip()
+                      if 'sn' in body: sn = body['sn'].strip()
+                      if 'mac' in body: mac = body['mac'].strip()
                       if 'netif_num' in body: netif_num = body['netif_num'].strip()
                       if 'vid' in body: vid = body['vid'].strip()
                       if 'pid' in body: pid = body['pid'].strip()
@@ -789,7 +789,7 @@ jobs:
             toolkitdir=usr/local/x86_64-pc-linux-gnu/x86_64-pc-linux-gnu/sys-root/usr/lib/modules/DSM-${version::3}/build
             curl -skL "https://global.download.synology.com/download/ToolChain/toolkit/${version::3}/${synoarch}/${toolkittxz}" -o ${toolkittxz}
             mkdir ${synoarch} && tar -C./${synoarch}/ -xf ${toolkittxz} ${toolkitdir}
-            git clone -b master --depth=1 https://github.com/${repo}/redpill-lkm.git
+            git clone -b master --depth=1 https://github.com/peng2289/redpill-lkm.git
             cd redpill-lkm
             # sed -i 's/   -std=gnu89/   -std=gnu89 -fno-pie/' ../${synoarch}/${toolkitdir}/Makefile
             make LINUX_SRC=../${synoarch}/${toolkitdir} dev-v${version::1}
