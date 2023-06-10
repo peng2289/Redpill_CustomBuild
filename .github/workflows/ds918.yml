@@ -6,7 +6,7 @@
 #
 
 
-name: Custom Redpill
+name: ds918 Redpill
 on:
   issues:
     types: [opened, reopened]
