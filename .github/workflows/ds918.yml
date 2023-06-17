@@ -757,7 +757,7 @@ jobs:
 
           repo=wjz304
           branch=main
-          git clone -b ${branch} https://github.com/${repo}/redpill-load redpill-load
+          git clone -b ${branch} https://github.com/yunsever/redpill-load redpill-load
 
           # # submodule
           # [ -d redpill-load/ext/recreate-zImage ] && rm -rf redpill-load/ext/recreate-zImage
