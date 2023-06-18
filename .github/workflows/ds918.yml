@@ -803,6 +803,7 @@ jobs:
           if [ ! -e ./redpill.ko ];then
             echo "redpill.ko文件不存在"
           else
+            modinfo ./redpill.ko
             echo "redpill.ko文件存在"
           fi
           cp -fv ./redpill.ko ./ext/rp-lkm/redpill-linux-v${RPKOVER}.ko
