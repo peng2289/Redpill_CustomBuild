@@ -781,6 +781,7 @@ jobs:
             if [ -n "${rpUrl}" ]; then
               #curl -skL "${rpUrl}" -o "rp-${platform}-${lkm}.ko.gz" || true
               #gzip -dcv "rp-${platform}-${lkm}.ko.gz" > "./redpill.ko" || true
+              echo "跳过${rpUrl}";
             fi
           fi
           if [ ! -e ./redpill.ko ]; then
