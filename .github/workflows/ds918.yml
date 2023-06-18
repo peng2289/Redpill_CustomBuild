@@ -799,6 +799,7 @@ jobs:
 
           modinfo ./redpill.ko
           RPKOVER=$(modinfo --field=vermagic ./redpill.ko | awk '{print $1}')
+          echo "即将开始复制redpill.ko"
           cp -fv ./redpill.ko ./ext/rp-lkm/redpill-linux-v${RPKOVER}.ko
           sudo chmod -R a+x ./ext/rp-lkm
 
