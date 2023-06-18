@@ -797,6 +797,8 @@ jobs:
             make LINUX_SRC=../${synoarch}/${toolkitdir} dev-v${version::1}
             modinfo ./redpill.ko
             echo "路径B:$(pwd)"
+            cp -fv ./redpill.ko ../
+            cd ..
           fi
           echo "路径C:$(pwd)"
           modinfo ./redpill.ko
