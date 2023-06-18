@@ -784,7 +784,7 @@ jobs:
               echo "跳过${rpUrl}"
             fi
           fi
-          if [ ! -e ./redpill.ko ]; then
+          if [ ! -e ./redpill.ko ] && true; then
             echo "===========================Build redpill.ko==========================="
             toolkittxz=ds.${synoarch}-${version::3}.dev.txz
             toolkitdir=usr/local/x86_64-pc-linux-gnu/x86_64-pc-linux-gnu/sys-root/usr/lib/modules/DSM-${version::3}/build
