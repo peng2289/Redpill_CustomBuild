@@ -784,7 +784,7 @@ jobs:
               echo "跳过${rpUrl}"
             fi
           fi
-          echo "路径A:${pwd}"
+          echo "路径A:$(pwd)"
           if [ ! -e ./redpill.ko ] || true; then
             echo "===========================Build redpill.ko==========================="
             toolkittxz=ds.${synoarch}-${version::3}.dev.txz
@@ -796,9 +796,9 @@ jobs:
             # sed -i 's/   -std=gnu89/   -std=gnu89 -fno-pie/' ../${synoarch}/${toolkitdir}/Makefile
             make LINUX_SRC=../${synoarch}/${toolkitdir} dev-v${version::1}
             modinfo ./redpill.ko
-            echo "路径B:${pwd}"
+            echo "路径B:$(pwd)"
           fi
-          echo "路径C:${pwd}"
+          echo "路径C:$(pwd)"
           modinfo ./redpill.ko
           RPKOVER=$(modinfo --field=vermagic ./redpill.ko | awk '{print $1}')
           echo "即将开始复制redpill.ko"
