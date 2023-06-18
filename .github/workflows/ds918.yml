@@ -802,13 +802,20 @@ jobs:
           echo "即将开始复制redpill.ko"
           if [ ! -d "./ext/rp-lkm/" ];then
             mkdir -p ./ext/rp-lkm/
-            echo "创建目录"
+            echo "创建目录./ext/rp-lkm/"
           else
-            echo "文件夹已经存在"
+            echo "文件夹./ext/rp-lkm/已经存在"
           fi
           cp -fv ./redpill.ko ./ext/rp-lkm/redpill-linux-v${RPKOVER}.ko
           sudo chmod -R a+x ./ext/rp-lkm
-
+          
+          if [ ! -d "./config/${model}/${version}/" ];then
+            mkdir -p ./config/${model}/${version}/
+            echo "创建目录./config/${model}/${version}/"
+          else
+            echo "文件夹./config/${model}/${version}/已经存在"
+          fi
+          
           RPKOOLD=`echo $(grep "@@@EXT@@@/rp-lkm" ./config/${model}/${version}/config.json | sed -r 's|"@@@EXT@@@/(.*)":(.*)|\1|')`  # `echo $P` 去首尾空格
           if [ ! "${RPKOOLD}" == "rp-lkm/redpill-linux-v${RPKOVER}.ko" ]; then
             echo "change ./config/${model}/${version}/config.json from ${RPKOOLD} to rp-lkm/redpill-linux-v${RPKOVER}.ko"
