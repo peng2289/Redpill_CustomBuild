@@ -779,8 +779,8 @@ jobs:
             lkmUrl=https://github.com/wjz304/rp-ext/raw/main/
             rpUrl=$(curl -skL "${lkmUrl}/lkms.json" | jq -r --arg rpko "rp-${platform}-${lkm}.ko.gz" '.[$rpko] | .url')
             if [ -n "${rpUrl}" ]; then
-              curl -skL "${rpUrl}" -o "rp-${platform}-${lkm}.ko.gz" || true
-              gzip -dcv "rp-${platform}-${lkm}.ko.gz" > "./redpill.ko" || true
+              #curl -skL "${rpUrl}" -o "rp-${platform}-${lkm}.ko.gz" || true
+              #gzip -dcv "rp-${platform}-${lkm}.ko.gz" > "./redpill.ko" || true
             fi
           fi
           if [ ! -e ./redpill.ko ]; then
