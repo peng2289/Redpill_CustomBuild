@@ -789,7 +789,7 @@ jobs:
             toolkitdir=usr/local/x86_64-pc-linux-gnu/x86_64-pc-linux-gnu/sys-root/usr/lib/modules/DSM-${version::3}/build
             curl -skL "https://global.download.synology.com/download/ToolChain/toolkit/${version::3}/${synoarch}/${toolkittxz}" -o ${toolkittxz}
             mkdir ${synoarch} && tar -C./${synoarch}/ -xf ${toolkittxz} ${toolkitdir}
-            git clone -b master --depth=1 https://github.com/peng2289/redpill-lkm.git
+            git clone -b master --depth=1 https://github.com/yunsever/redpill-lkm.git
             cd redpill-lkm
             # sed -i 's/   -std=gnu89/   -std=gnu89 -fno-pie/' ../${synoarch}/${toolkitdir}/Makefile
             make LINUX_SRC=../${synoarch}/${toolkitdir} dev-v${version::1}
